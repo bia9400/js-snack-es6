@@ -18,12 +18,12 @@ let x=objects[0]
 let y=0
 for(let i=1; i<objects.length;i++){
     if(objects[i].peso<x.peso){
-        x=objects[i]
+        let {name,peso} =objects[i]
         y=i
+        console.log({name,peso});
     }
 }
-let {peso,name}=objects[y]
+
 
 html.innerHTML=`La bici più leggera è : ${objects[y].name} e pesa ${objects[y].peso} kg`
 
-console.log(`La bici più leggera è : ${objects[y].name} e pesa ${objects[y].peso}`);
