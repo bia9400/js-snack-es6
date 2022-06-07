@@ -32,4 +32,6 @@ for (let i = 0; i < squadre.length; i++) {
     let z=squadre[i].name
     newArray.push({z,y})
 }
+
+
 console.log(newArray);
