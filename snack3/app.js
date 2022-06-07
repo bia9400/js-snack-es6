@@ -1,29 +1,36 @@
-const objects=[
-    {name:"Scott",
-    peso:7},
-    {name:"Pinarello",
-    peso:6.9},
-    {name:"DogmaF12",
-    peso:7.2},
-    {name:"Triban",
-    peso:7.7},
-    {name:"Triban",
-    peso:7.9},
-    {name:"Triban",
-    peso:6.7}
+const myArray = ["Michele", "Fabio", "Roberto", "Giovanni", "Simone", "Chiara"];
+let min=parseInt(prompt("Inserisci l'indice minimo da cui estrarre"))
+let max=parseInt(prompt("Inserisci l'indice massimo da cui estrarre"))
 
-]
-const html=document.querySelector(".text-mine")
-let x=objects[0]
-let y=0
-for(let i=1; i<objects.length;i++){
-    if(objects[i].peso<x.peso){
-        let {name,peso} =objects[i]
-        y=i
-        console.log({name,peso});
+
+function intervalForEach(min, max, array) {
+let newArray=[] ;
+if(min<0 || min>=max || max>array.length){
+    alert("Non puoi estrarre con questi valori di  min e max da questo array")
+return
+}   
+array.forEach((element,index) => {
+    if(index>=min && index<=max){
+        newArray.push(element)
     }
+});
+return newArray
 }
 
+console.log(`L'array ottenuto con foreach è `+ intervalForEach(min,max,myArray));
 
-html.innerHTML=`La bici più leggera è : ${objects[y].name} e pesa ${objects[y].peso} kg`
+function intervalFilter(min, max, array) {
+    
+    if(min<0 || min>=max || max>array.length){
+        alert("Non puoi estrarre con questi valori di  min e max da questo array")
+    return
+    }   
+    let newarray=array.filter((element,index) => {
+        if(index>=min && index<=max){
+            return true
+        }
+    });
+    return newarray
+    }
 
+    console.log(`L'array ottenuto con foreach è `+ intervalFilter(min,max,myArray));
